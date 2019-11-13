@@ -1,0 +1,5 @@
+{
+    "driver":"c:/selenium/chromedriver78",
+    "delay":2,
+    "delay_end":5
+}
