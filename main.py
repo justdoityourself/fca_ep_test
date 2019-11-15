@@ -117,7 +117,7 @@ def clear_data(browser):
 def add_youtube_video(browser):
     return 0
 
-def orchestrate(tests)
+def orchestrate(tests):
     try:
         success = 0
         fail = 0
@@ -127,7 +127,7 @@ def orchestrate(tests)
 
         print("Initializing Driver...")
         browser = webdriver.Chrome(settings['driver'])
-        browser.get = (Settings['url'])
+        browser.get = (settings['url'])
 
         print("Loading Page...")
         time.sleep( settings['delay'] )
