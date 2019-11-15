@@ -127,7 +127,7 @@ def orchestrate(tests)
 
         print("Initializing Driver...")
         browser = webdriver.Chrome(settings['driver'])
-        browser.get('https://echopractice.d8data.io')
+        browser.get = (Settings['url'])
 
         print("Loading Page...")
         time.sleep( settings['delay'] )
