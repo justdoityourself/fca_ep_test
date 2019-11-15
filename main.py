@@ -24,7 +24,7 @@ def test_debug_login3(browser):
         license_input_dialog = WebDriverWait(browser,5).until(
         EC.invisibility_of_element_located((By.ID, "license_input_dialog")))
 
-    except TimeoutException:
+    except Exception as e:
         return state
 
     return 0
@@ -45,33 +45,48 @@ def test_debug_login2(browser):
         license_input_dialog = WebDriverWait(browser,5).until(
         EC.invisibility_of_element_located((By.ID, "license_input_dialog")))
 
-    except TimeoutException:
+    except Exception as e:
         return state
 
     return 0
 
-def Report_Bug_test(browser):
-        kabob_menu = browser.find_element_by_id("kabob_menu")
-        settings = browser.find_element_by_id("settings")
-        report_bug = browser.find_element_by_id("report_bug")
-        comment_area = browser.find_element_by_id("comment_area")
-        report_bug_send = browser.find_element_by_id("report_bug_send")
+report_bug_test_legend = ["Success","Main Menu not visible","Open settings menu item not visible"]
 
-        kabob_menu.click()
-        browser.implicitly_wait(2)
+def report_bug_test(browser):
+    state = 1
+    try:
+        main_menu = WebDriverWait(browser,5).until(EC.visibility_of_element_located((By.ID, "main_menu")))
+        main_menu.click()
+        state = 2
 
-        Setting.click()
-        browser.implicitly_wait(2)
+        open_settings_menu_button = WebDriverWait(browser,5).until(EC.visibility_of_element_located((By.ID, "open_settings_menu_button")))
+        open_settings_menu_button.click()
+        state = 3
 
-        Report_bug.click()
-        browser.implicitly_wait(2)
+        open_bug_report_button = WebDriverWait(browser,5).until(EC.visibility_of_element_located((By.ID, "open_bug_report_button")))
+        open_bug_report_button.click()
+        state = 4
 
-        comment_area.click()
-        browser.implicitly_wait(2)
-        comment_area.send_keys("Report a Bug Test")
+        bug_comment_area = WebDriverWait(browser,5).until(EC.visibility_of_element_located((By.ID, "bug_comment_area")))
+        bug_comment_area.click()
+        bug_comment_area.send_keys("Report a Bug Test")
+        state = 5
 
-        Report_bug_send.click()
-        Print("Just sent report")
+        bug_report_send = WebDriverWait(browser,5).until(EC.visibility_of_element_located((By.ID, "bug_report_send")))
+        bug_report_send.click()
+        state = 6
+
+        confirm_yes = WebDriverWait(browser,5).until(EC.visibility_of_element_located((By.ID, "confirm_yes")))
+        confirm_yes.click()
+        state = 7
+
+        bug_comment_area = WebDriverWait(browser,5).until(EC.invisibility_of_element_located((By.ID, "bug_comment_area")))
+        state = 8
+
+    except Exception as e:
+        return state
+    
+    return 0
 
 #Use 2 and 3
 def test_debug_login(browser):
