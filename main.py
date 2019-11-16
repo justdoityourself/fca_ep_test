@@ -133,8 +133,8 @@ def orchestrate(tests):
         time.sleep( settings['delay'] )
 
         for test in tests: 
-            print("Running:" + test.method.__name__ + "...")
-            r = test.method(browser)
+            print("Running:" + test['method'].__name__ + "...")
+            r = test['method'](browser)
 
             if not r: success+=1 
             else: fail += 1
@@ -151,7 +151,7 @@ def orchestrate(tests):
 full_test1 = [
     {   "method": clear_data  },
     {   "method": test_debug_login2 },
-    {   "method": Report_Bug_test },
+    {   "method": report_bug_test },
     {   "method": add_youtube_video }
 ]
 
