@@ -53,35 +53,35 @@ def test_debug_login2(browser):
 report_bug_test_legend = ["Success","Main Menu not visible","Open settings menu item not visible"]
 
 def report_bug_test(browser):
-    state = 1
+    state = 0
     try:
+        state = 1
         main_menu = WebDriverWait(browser,5).until(EC.visibility_of_element_located((By.ID, "main_menu")))
         main_menu.click()
-        state = 2
 
+        state = 2
         open_settings_menu_button = WebDriverWait(browser,5).until(EC.visibility_of_element_located((By.ID, "open_settings_menu_button")))
         open_settings_menu_button.click()
-        state = 3
 
+        state = 3
         open_bug_report_button = WebDriverWait(browser,5).until(EC.visibility_of_element_located((By.ID, "open_bug_report_button")))
         open_bug_report_button.click()
-        state = 4
 
+        state = 4
         bug_comment_area = WebDriverWait(browser,5).until(EC.visibility_of_element_located((By.ID, "bug_comment_area")))
         bug_comment_area.click()
         bug_comment_area.send_keys("Report a Bug Test")
-        state = 5
 
+        state = 5
         bug_report_send = WebDriverWait(browser,5).until(EC.visibility_of_element_located((By.ID, "bug_report_send")))
         bug_report_send.click()
-        state = 6
 
+        state = 6
         confirm_yes = WebDriverWait(browser,5).until(EC.visibility_of_element_located((By.ID, "confirm_yes")))
         confirm_yes.click()
-        state = 7
 
+        state = 7
         bug_comment_area = WebDriverWait(browser,5).until(EC.invisibility_of_element_located((By.ID, "bug_comment_area")))
-        state = 8
 
     except Exception as e:
         return state
@@ -135,6 +135,12 @@ def orchestrate(tests):
         for test in tests: 
             print("Running:" + test['method'].__name__ + "...")
             r = test['method'](browser)
+<<<<<<< HEAD
+=======
+
+            if 'legend' in test.keys():
+                print(test['legend'][r])
+>>>>>>> 1977e91b52f1b239e6e9aba25affa5a072a45534
 
             if not r: success+=1 
             else: fail += 1
@@ -151,7 +157,11 @@ def orchestrate(tests):
 full_test1 = [
     {   "method": clear_data  },
     {   "method": test_debug_login2 },
+<<<<<<< HEAD
     {   "method": report_bug_test },
+=======
+    {   "method": report_bug_test, "legend": report_bug_test_legend },
+>>>>>>> 1977e91b52f1b239e6e9aba25affa5a072a45534
     {   "method": add_youtube_video }
 ]
 
