@@ -50,7 +50,8 @@ def test_debug_login2(browser):
 
     return 0
 
-report_bug_test_legend = ["Success","Main Menu not visible","Open settings menu item not visible"]
+bug_report_send = WebDriverWait(browser,5).until(EC.visibility_of_element_located((By.ID, "bug_report_send")))   
+report_bug_test_legend = ["Success","Main Menu not visible","Open settings menu item not visible","open bug report button not visible","bug comment area not visible","bug report send button not visible","confirm yes button not visible"]
 
 def report_bug_test(browser):
     state = 0
