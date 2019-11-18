@@ -3,9 +3,9 @@ from orchestrations import orchestrations
 
 import sys
 
-if let(sys.argv) == 1:
-    #Run all tests
-    for name, component in orchestrations:
+if len(sys.argv) == 1:
+    print("Run all tests:")
+    for name, component in orchestrations.items():
         print("Orchestrate: " + name)
         orchestrate(component)
 else:
