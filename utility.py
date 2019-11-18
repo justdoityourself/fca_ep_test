@@ -28,7 +28,7 @@ def wait_for_gone(state,browser,id):
 
 def new_test(driver,url):
     browser = webdriver.Chrome(driver)
-    browser.get = (url)
+    browser.get(url)
 
     return browser
 

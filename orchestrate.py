@@ -8,6 +8,7 @@ def orchestrate(tests):
         fail = 0
 
         settings = load_settings()
+        print(settings)
 
         print("Initializing Driver...")
         browser = new_test(settings['driver'],settings['url'])

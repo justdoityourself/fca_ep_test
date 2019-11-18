@@ -1,7 +1,7 @@
 from utility import wait_for
 from selenium.webdriver.common.keys import Keys
 
-def test_debug_login_enter_legend = ["Success","License Dialog is not Displayed","Validation code input missing","License Dialog failed to close"]
+test_debug_login_enter_legend = ["Success","License Dialog is not Displayed","Validation code input missing","License Dialog failed to close"]
 
 def test_debug_login_enter(browser):
     state = [0]
@@ -19,7 +19,7 @@ def test_debug_login_enter(browser):
 
     return 0
 
-def test_debug_login_click_legend = test_debug_login_enter_legend
+test_debug_login_click_legend = test_debug_login_enter_legend
 
 def test_debug_login_click(browser):
     state = [0]
