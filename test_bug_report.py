@@ -1,6 +1,10 @@
 from utility import wait_for_then_click,wait_for_gone
 
-def report_bug_test_legend = ["Success","Main Menu not visible","Open settings menu item not visible"]
+report_bug_test_legend = [
+    "Success",
+    "Main Menu not visible",
+    "Open settings menu item not visible"
+]
 
 def report_bug_test(browser):
     state = [0]

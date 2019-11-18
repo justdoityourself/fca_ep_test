@@ -1,6 +1,5 @@
 from component_settings_dialog import settings_dialog
 
-def orchestrations = 
-{
+orchestrations = {
     "settings_dialog":settings_dialog
 }
