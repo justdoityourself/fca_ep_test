@@ -1,5 +1,7 @@
-from utility import wait_for
+from utility import wait_for,wait_for_gone
+from selenium.common.exceptions import TimeoutException
 from selenium.webdriver.common.keys import Keys
+import traceback
 
 test_debug_login_enter_legend = ["Success","License Dialog is not Displayed","Validation code input missing","License Dialog failed to close"]
 
@@ -14,7 +16,10 @@ def test_debug_login_enter(browser):
     
         wait_for_gone(state,browser,'license_input_dialog')
 
+    except TimeoutException as e:
+        return state[0]
     except Exception as e:
+        print(e,traceback.format_exc())
         return state[0]
 
     return 0
@@ -33,7 +38,10 @@ def test_debug_login_click(browser):
     
         wait_for_gone(state,browser,'license_input_dialog')
 
+    except TimeoutException as e:
+        return state[0]
     except Exception as e:
+        print(e,traceback.format_exc())
         return state[0]
 
     return 0

@@ -1,9 +1,12 @@
 from utility import wait_for_then_click,wait_for_gone
+from selenium.common.exceptions import TimeoutException
+import traceback
 
 report_bug_test_legend = [
     "Success",
     "Main Menu not visible",
-    "Open settings menu item not visible"
+    "Open settings menu item not visible",
+    ""
 ]
 
 def report_bug_test(browser):
@@ -21,7 +24,10 @@ def report_bug_test(browser):
 
         wait_for_gone(state,browser,"bug_comment_area")
       
+    except TimeoutException as e:
+        return state[0]
     except Exception as e:
+        print(e,traceback.format_exc())
         return state[0]
     
     return 0
