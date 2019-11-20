@@ -10,6 +10,7 @@ from selenium.webdriver.common.by import By
 def wait_for_then_click(state,browser,id):
     state[0] += 1
     r = WebDriverWait(browser,5).until(EC.visibility_of_element_located((By.ID, id)))
+    r = WebDriverWait(browser,5).until(EC.element_to_be_clickable((By.ID, id)))
     r.click()
 
     return r
