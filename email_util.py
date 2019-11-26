@@ -1,23 +1,20 @@
 import imaplib
 
-
-def get_last_email():
-    mail = imaplib.IMAP4_SSL('firstchairanalytics.com')
+def get_last_email_code():
+    mail = imaplib.IMAP4('firstchairanalytics.com',143)
     mail.login('test@firstchairanalytics.com', 'fca12345$$$')
     mail.list()
-    # Out: list of "folders" aka labels in gmail.
-    mail.select("inbox") # connect to inbox.
+
+    mail.select("inbox") 
 
     result, data = mail.search(None, "ALL")
     
-    ids = data[0] # data is a list.
-    id_list = ids.split() # ids is a space separated string
-    latest_email_id = id_list[-1] # get the latest
+    ids = data[0] 
+    id_list = ids.split() 
+    latest_email_id = id_list[-1] 
     
-    result, data = mail.fetch(latest_email_id, "(RFC822)") # fetch the email body (RFC822) for the given ID
-    
-    raw_email = data[0][1] # here's the body, which is raw text of the whole email
-    # including headers and alternate payloads
+    result, data = mail.fetch(latest_email_id, "(RFC822)")
 
+    raw_email = data[0][1] 
 
-get_last_email()
+    return raw_email.rpartition('Use this code to activate EchoPractice: ')[2][0:19]
