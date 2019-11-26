@@ -1,5 +1,6 @@
 from selenium import webdriver
 import json
+import time
 
 from selenium.common.exceptions import TimeoutException
 from selenium.webdriver.support.ui import WebDriverWait
@@ -38,3 +39,12 @@ def load_settings():
         settings = json.load(config_file)
 
     return settings
+
+def delay_test60(b):
+    time.sleep( 60 )
+
+    return 0
+
+delay_component60 = [
+    {   "method": delay_test60, "legend": [] },
+]

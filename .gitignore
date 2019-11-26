@@ -3,3 +3,5 @@
 *.pyc
 orchestrate.pyc
 *.pyc
+orchestrations.pyc
+utility.pyc
