@@ -24,5 +24,7 @@ full_mode4 = {
 
 orchestrations = [
     full_mode1,
-    full_mode2
+    full_mode2,
+    full_mode3,
+    full_mode4
 ]
