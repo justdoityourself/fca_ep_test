@@ -19,4 +19,4 @@ def get_last_email_code():
 
     raw_email = data[0][1] 
 
-    return raw_email.rpartition('Use this code to activate EchoPractice: ')[2][0:19]
+    return raw_email.decode().rpartition('Use this code to activate EchoPractice: ')[2][0:19]
