@@ -1,6 +1,8 @@
 import imaplib
+import time 
 
 def get_last_email_code():
+    time.sleep( 3 ) 
     mail = imaplib.IMAP4('firstchairanalytics.com',143)
     mail.login('test@firstchairanalytics.com', 'fca12345$$$')
     mail.list()
