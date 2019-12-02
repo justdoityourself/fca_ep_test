@@ -25,9 +25,12 @@ full_mode4 = {
 delay = {
     "zdelay":delay_component60,
 }
-
-
 orchestrations = [
+    full_mode3
+]
+
+
+orchestrations_old = [
     full_mode1,
     #delay,
     full_mode2,
