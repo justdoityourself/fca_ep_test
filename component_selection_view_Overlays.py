@@ -1,4 +1,5 @@
-from test_selection_view_overlays import selection_view_overlay, report_selection_view_overlays_legend
+from test_selection_view_overlays import selection_view_overlays, report_selection_view_overlays_legend
+
 settings_dialog = [
-    {   "method": report_bug_test, "legend": report_bug_test_legend }
+    {   "method": selection_view_overlays, "legend": report_selection_view_overlays_legend }
 ]

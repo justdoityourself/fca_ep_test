@@ -11,7 +11,7 @@ report_selection_view_overlays_legend = [
     "History not Visible",
 ]
 
-def selection_view_overlay(browser):
+def selection_view_overlays(browser):
     state = [0]
     try:
         wait_for_then_click(state,browser,"library_overlay")
