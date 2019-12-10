@@ -16,15 +16,35 @@ def wait_for_then_click(state,browser,id):
 
     return r
 
+def xwait_for_then_click(state,browser,xpath):
+    state[0] += 1
+    r = WebDriverWait(browser,5).until(EC.visibility_of_element_located((By.XPATH, xpath)))
+    r = WebDriverWait(browser,5).until(EC.element_to_be_clickable((By.XPATH, xpath)))
+    r.click()
+
+    return r
+
 def wait_for(state,browser,id):
     state[0] += 1
     r = WebDriverWait(browser,5).until(EC.visibility_of_element_located((By.ID, id)))
 
     return r
 
+def xwait_for(state,browser,xpath):
+    state[0] += 1
+    r = WebDriverWait(browser,5).until(EC.visibility_of_element_located((By.XPATH, xpath)))
+
+    return r
+
 def wait_for_gone(state,browser,id):
     state[0] += 1
     r = WebDriverWait(browser,5).until(EC.invisibility_of_element_located((By.ID, id)))
+
+    return r
+
+def xwait_for_gone(state,browser,xpath):
+    state[0] += 1
+    r = WebDriverWait(browser,5).until(EC.invisibility_of_element_located((By.XPATH, xpath)))
 
     return r
 
