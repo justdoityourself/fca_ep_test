@@ -1,5 +1,6 @@
 from component_settings_dialog import settings_dialog
 from component_license_dialog import license_dialog1, license_dialog2, license_dialog3, license_dialog4
+from component_selection_view_overlays import selection_view_overlays
 from utility import delay_component60
 
 full_mode1 = {
@@ -9,11 +10,13 @@ full_mode1 = {
 
 full_mode2 = {
     "license_dialog":license_dialog2,
+    "selection_view_overlays":selection_view_overlays,
     "settings_dialog":settings_dialog
 }
 
 full_mode3 = {
     "license_dialog":license_dialog3,
+    "selection_view_overlays":selection_view_overlays,
     "settings_dialog":settings_dialog
 }
 
@@ -26,7 +29,7 @@ delay = {
     "zdelay":delay_component60,
 }
 orchestrations = [
-    full_mode3
+    full_mode2
 ]
 
 

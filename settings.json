@@ -1,6 +1,6 @@
 {
     "driver":"c:/selenium/chromedriver78",
-    "url":"https://echopractice.d8data.io",
+    "url":"https://echopractice-alpha.d8data.io",
     "delay":2,
     "delay_end":5
 }

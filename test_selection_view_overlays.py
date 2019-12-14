@@ -1,6 +1,7 @@
-from utility import wait_for_then_click,wait_for_gone,wait_for
+from utility import xwait_for_then_click,wait_for_gone,wait_for
 from selenium.common.exceptions import TimeoutException
 import traceback
+import xpath_objects
 
 report_selection_view_overlays_legend = [
     "Success",
@@ -11,14 +12,14 @@ report_selection_view_overlays_legend = [
     "History not Visible",
 ]
 
-def selection_view_overlays(browser):
+def selection_view_overlays_toggle(browser):
     state = [0]
     try:
-        wait_for_then_click(state,browser,"library_overlay")
-        wait_for_then_click(state,browser,"recommended_overlay")
-        wait_for_then_click(state,browser,"search_overlay")
-        wait_for_then_click(state,browser,"total_practice_overlay")
-        wait_for_then_click(state,browser,"history_overlay")
+        xwait_for_then_click(state,browser, xpath_objects.library_overlay_button)
+        xwait_for_then_click(state,browser, xpath_objects.recommended_overlay_button)
+        xwait_for_then_click(state,browser, xpath_objects.search_overlay_button)
+        xwait_for_then_click(state,browser, xpath_objects.total_practice_overlay_button)
+        xwait_for_then_click(state,browser, xpath_objects.history_overlay_button)
       
     except TimeoutException as e:
         return state[0]
