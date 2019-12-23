@@ -6,11 +6,11 @@ import time
 
 report_add_video_library_legend = [
     "Success",
-    "add video not visible",
-    "add video dialog not visible",
-    "Search not Visible",
-    "Total Practice not Visible",
-    "History not Visible",
+    "Library button not visible",
+    "Library button not active",
+    "Add Video not Visible",
+    "Add Video link not Visible",
+    "Ok not Visible",
 ]
 
 def add_video_library(browser):
@@ -27,7 +27,7 @@ def add_video_library(browser):
 
         xwait_for_then_click(state,browser, xpath_objects.add_video_youtube_link_click)
         time.sleep( 1 )
-        #xwait_for(state,browser, xpath_objects.add_video_dialog)
+        xwait_for(state,browser, xpath_objects.add_video_dialog)
         time.sleep( 1 )
 
         Add_link = xwait_for(state,browser, xpath_objects.music_videoyoutube_link)
@@ -37,11 +37,20 @@ def add_video_library(browser):
         time.sleep( 3 )
 
         xwait_for_then_click(state,browser, xpath_objects.add_video_library_ok)
+        time.sleep( 1 )
+
+        xwait_for_then_click(state,browser, xpath_objects.return_to_selection_view)
+        xwait_for_then_click(state,browser, xpath_objects.edit_video_button_3)
+        xwait_for_then_click(state,browser, xpath_objects.delete_video_icon)
+        xwait_for_then_click(state,browser, xpath_objects.delete_video_no)
 
 
+        xwait_for_then_click(state,browser, xpath_objects.edit_video_button_3)
+        xwait_for_then_click(state,browser, xpath_objects.delete_video_icon)
+        xwait_for_then_click(state,browser, xpath_objects.delete_video_yes)
 
-
-       
+        print ("Add Remove Complete !")
+  
       
     except TimeoutException as e:
         return state[0]
