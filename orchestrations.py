@@ -2,13 +2,17 @@ from component_settings_dialog import settings_dialog
 from component_license_dialog import license_dialog1, license_dialog2, license_dialog3, license_dialog4
 from component_selection_view_overlays import selection_view_overlays
 from component_add_remove_video import add_video
+from component_edit_timeline import edit_timeline_1
+from component_edit_timeline_convert_to_markers import edit_timeline_convert_sections
 from utility import delay_component60
 
 #test_debug_login_enter
 full_mode1 = {
     "license_dialog":license_dialog1,
-    "add_video_library":add_video,
-    "settings_dialog":settings_dialog
+    "markers_to_section" :edit_timeline_convert_sections
+    #"add_video_library":add_video,
+    #"settings_dialog":settings_dialog
+    #"edit_timeline":edit_timeline_1
 }
 
 #test_debug_login_click
