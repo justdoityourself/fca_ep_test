@@ -3,6 +3,7 @@ from selenium.common.exceptions import TimeoutException
 import traceback
 import xpath_objects
 import time
+from selenium.webdriver.common.keys import Keys
 
 report_edit_timeline_convert_to_markers_legend = [
     "Success",
@@ -44,16 +45,41 @@ def edit_timeline_convert_to_markers(browser):
 
         xwait_for_then_click(state,browser, xpath_objects.are_you_sure_pop_yes)
         time.sleep( 10 )
-        xwait_for_then_click(state,browser, xpath_objects.add_marker_icon)
-        time.sleep( 20 )
-        xwait_for_then_click(state,browser, xpath_objects.add_marker_icon)
-        time.sleep( 20 )
-        xwait_for_then_click(state,browser, xpath_objects.add_marker_icon)
-        time.sleep( 20 )
+
+        xwait_for(state,browser,'//body').send_keys(Keys.SPACE)
+
+        i = 0
+        while i < 8:
+            xwait_for_then_click(state,browser, xpath_objects.add_marker_icon)
+            time.sleep( 30 )
+            i += 1
 
         xwait_for_then_click(state,browser, xpath_objects.stop_video_click_enywhare)
-        time.sleep( 20 )
+        time.sleep( 10 )
 
+        xwait_for_then_click(state,browser, xpath_objects.practice_view_kabob)
+        time.sleep( 1 )
+
+        xwait_for_then_click(state,browser, xpath_objects.convert_markers_icon)
+        time.sleep( 1 )
+
+        xwait_for_then_click(state,browser, xpath_objects.are_you_sure_pop_yes)
+        time.sleep( 5 )
+
+        i = 0
+        while i < 8:
+            xwait_for_then_click(state,browser, xpath_objects.practice_view_kabob_2)
+            time.sleep( 3 )
+
+            xwait_for_then_click(state,browser, xpath_objects.add_practice)
+            time.sleep( 3 )
+            i += 1
+
+       
+
+
+
+      
 
 
         #xwait_for_then_click(state,browser, xpath_objects.return_to_selection_view)

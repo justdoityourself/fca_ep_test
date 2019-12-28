@@ -2,5 +2,5 @@
     "driver":"c:/selenium/chromedriver78",
     "url":"https://echopractice-alpha.d8data.io",
     "delay":2,
-    "delay_end":5
+    "delay_end":3
 }

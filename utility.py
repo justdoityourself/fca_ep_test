@@ -68,3 +68,6 @@ def delay_test60(b):
 delay_component60 = [
     {   "method": delay_test60, "legend": [] },
 ]
+
+#def add_video(browser):
+   

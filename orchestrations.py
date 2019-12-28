@@ -4,12 +4,14 @@ from component_selection_view_overlays import selection_view_overlays
 from component_add_remove_video import add_video
 from component_edit_timeline import edit_timeline_1
 from component_edit_timeline_convert_to_markers import edit_timeline_convert_sections
+from component_add_remove_folder import add_remove_folder_1
 from utility import delay_component60
 
 #test_debug_login_enter
 full_mode1 = {
     "license_dialog":license_dialog1,
-    "markers_to_section" :edit_timeline_convert_sections
+    "add folders":add_remove_folder_1
+    #"markers_to_section" :edit_timeline_convert_sections
     #"add_video_library":add_video,
     #"settings_dialog":settings_dialog
     #"edit_timeline":edit_timeline_1
