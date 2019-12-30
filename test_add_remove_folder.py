@@ -20,7 +20,7 @@ def add_remove_folder(browser):
         time.sleep( 1 )
 
         i = 0
-        while i < 15:
+        while i < 4:
             xwait_for_then_click(state,browser, xpath_objects.add_binder)
             time.sleep( 1 )
             xwait_for_then_click(state,browser, xpath_objects.add_binder_name_click)
@@ -34,6 +34,15 @@ def add_remove_folder(browser):
 
             xwait_for_then_click(state,browser, xpath_objects.add_binder_click_ok)
             time.sleep( 1 )
+            i += 1
+
+        i = 0
+        while i < 4:
+            xwait_for_then_click(state,browser, xpath_objects.open_binder)
+            time.sleep( 1 )
+            xwait_for_then_click(state,browser, xpath_objects.remove_binder)
+            time.sleep( 1 )
+
             i += 1
         
 

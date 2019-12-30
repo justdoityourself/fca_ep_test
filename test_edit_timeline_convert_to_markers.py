@@ -18,10 +18,10 @@ def edit_timeline_convert_to_markers(browser):
     state = [0]
     try:
 
-        xwait_for_then_click(state,browser, xpath_objects.library_overlay_button)
-        time.sleep( 1 )
-        xwait_for(state,browser, xpath_objects.library_overlay_button_active)
-        time.sleep( 1 )
+        #xwait_for_then_click(state,browser, xpath_objects.library_overlay_button)
+        #time.sleep( 1 )
+        #xwait_for(state,browser, xpath_objects.library_overlay_button_active)
+        #time.sleep( 1 )
        
         xwait_for_then_click(state,browser, xpath_objects.add_video_library_overlay)
         time.sleep( 1 )
@@ -75,6 +75,11 @@ def edit_timeline_convert_to_markers(browser):
             time.sleep( 3 )
             i += 1
 
+        xwait_for_then_click(state,browser, xpath_objects.return_to_selection_view)
+        time.sleep( 1 )
+
+        xwait_for_then_click(state,browser, xpath_objects.are_you_sure_pop_yes)
+        time.sleep( 2 )
        
 
 

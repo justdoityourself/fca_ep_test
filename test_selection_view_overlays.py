@@ -16,10 +16,10 @@ report_selection_view_overlays_legend = [
 def selection_view_overlays_toggle(browser):
     state = [0]
     try:
-        xwait_for_then_click(state,browser, xpath_objects.library_overlay_button)
-        time.sleep( 1 )
-        xwait_for(state,browser, xpath_objects.library_overlay_button_active)
-        time.sleep( 1 )
+        #xwait_for_then_click(state,browser, xpath_objects.library_overlay_button)
+        #time.sleep( 1 )
+        #xwait_for(state,browser, xpath_objects.library_overlay_button_active)
+        #time.sleep( 1 )
         #xwait_for_then_click(state,browser, xpath_objects.recommended_overlay_button)
         #time.sleep( 1 )
         #xwait_for(state,browser, xpath_objects.recommended_overlay_button_active)

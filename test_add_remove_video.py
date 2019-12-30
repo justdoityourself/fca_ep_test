@@ -17,10 +17,10 @@ def add_video_library(browser):
     state = [0]
     try:
 
-        xwait_for_then_click(state,browser, xpath_objects.library_overlay_button)
-        time.sleep( 1 )
-        xwait_for(state,browser, xpath_objects.library_overlay_button_active)
-        time.sleep( 1 )
+        #xwait_for_then_click(state,browser, xpath_objects.library_overlay_button)
+        #time.sleep( 1 )
+        #xwait_for(state,browser, xpath_objects.library_overlay_button_active)
+        #time.sleep( 1 )
        
         xwait_for_then_click(state,browser, xpath_objects.add_video_library_overlay)
         time.sleep( 1 )

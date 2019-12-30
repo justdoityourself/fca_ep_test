@@ -46,34 +46,43 @@ def edit_timeline(browser):
         time.sleep( 20 )
 
         xwait_for_then_click(state,browser, xpath_objects.stop_video_click_enywhare)
-        time.sleep( 1 )
+        time.sleep( 3 )
 
         xwait_for_then_click(state,browser, xpath_objects.play_button)
         time.sleep( 20 )
 
         xwait_for_then_click(state,browser, xpath_objects.stop_video_click_enywhare)
-        time.sleep( 1 )
+        time.sleep( 3 )
 
         xwait_for_then_click(state,browser, xpath_objects.section2_select_checkmark)
         time.sleep( 1 )
 
         xwait_for_then_click(state,browser, xpath_objects.play_button)
-        time.sleep( 150 )
+        time.sleep( 20 )
 
         xwait_for_then_click(state,browser, xpath_objects.stop_video_click_enywhare)
         time.sleep( 10 )
 
         xwait_for_then_click(state,browser, xpath_objects.open_r_a_p_menu)
-        time.sleep( 1 )
+        time.sleep( 2 )
 
         xwait_for_then_click(state,browser, xpath_objects.repetitions_4)
-        time.sleep( 1 )
+        time.sleep( 2 )
 
         xwait_for_then_click(state,browser, xpath_objects.speed_1_25)
-        time.sleep( 1 )
+        time.sleep( 2 )
 
         xwait_for_then_click(state,browser, xpath_objects.play_button)
-        time.sleep( 20 )
+        time.sleep( 10 )
+
+        xwait_for_then_click(state,browser, xpath_objects.stop_video_click_enywhare)
+        time.sleep( 5 )
+
+        xwait_for_then_click(state,browser, xpath_objects.return_to_selection_view)
+        time.sleep( 3 )
+
+        xwait_for_then_click(state,browser, xpath_objects.are_you_sure_pop_yes)
+        time.sleep( 2 )
 
 
         #xwait_for_then_click(state,browser, xpath_objects.return_to_selection_view)
