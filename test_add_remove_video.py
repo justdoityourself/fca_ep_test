@@ -3,6 +3,7 @@ from selenium.common.exceptions import TimeoutException
 import traceback
 import xpath_objects
 import time
+from test_utility import add_youtube_video
 
 report_add_video_library_legend = [
     "Success",
@@ -17,27 +18,12 @@ def add_video_library(browser):
     state = [0]
     try:
 
-        #xwait_for_then_click(state,browser, xpath_objects.library_overlay_button)
-        #time.sleep( 1 )
-        #xwait_for(state,browser, xpath_objects.library_overlay_button_active)
-        #time.sleep( 1 )
+        xwait_for_then_click(state,browser, xpath_objects.library_overlay_button)
+        time.sleep( 1 )
+        xwait_for(state,browser, xpath_objects.library_overlay_button_active)
+        time.sleep( 1 )
        
-        xwait_for_then_click(state,browser, xpath_objects.add_video_library_overlay)
-        time.sleep( 1 )
-
-        xwait_for_then_click(state,browser, xpath_objects.add_video_youtube_link_click)
-        time.sleep( 1 )
-        xwait_for(state,browser, xpath_objects.add_video_dialog)
-        time.sleep( 1 )
-
-        Add_link = xwait_for(state,browser, xpath_objects.music_videoyoutube_link)
-
-        Add_link.send_keys("https://www.youtube.com/watch?v=VsTDGy38lcY")
-
-        time.sleep( 3 )
-
-        xwait_for_then_click(state,browser, xpath_objects.add_video_library_ok)
-        time.sleep( 1 )
+        add_youtube_video(browser,state,"https://www.youtube.com/watch?v=VsTDGy38lcY")
 
         xwait_for_then_click(state,browser, xpath_objects.return_to_selection_view)
         xwait_for_then_click(state,browser, xpath_objects.edit_video_button_3)
