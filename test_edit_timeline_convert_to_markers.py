@@ -4,6 +4,7 @@ import traceback
 import xpath_objects
 import time
 from selenium.webdriver.common.keys import Keys
+from test_utility import add_youtube_video
 
 report_edit_timeline_convert_to_markers_legend = [
     "Success",
@@ -22,23 +23,9 @@ def edit_timeline_convert_to_markers(browser):
         #time.sleep( 1 )
         #xwait_for(state,browser, xpath_objects.library_overlay_button_active)
         #time.sleep( 1 )
-       
-        xwait_for_then_click(state,browser, xpath_objects.add_video_library_overlay)
-        time.sleep( 1 )
 
-        xwait_for_then_click(state,browser, xpath_objects.add_video_youtube_link_click)
-        time.sleep( 1 )
-        xwait_for(state,browser, xpath_objects.add_video_dialog)
-        time.sleep( 1 )
-
-        Add_link = xwait_for(state,browser, xpath_objects.music_videoyoutube_link)
-
-        Add_link.send_keys("https://www.youtube.com/watch?v=6GAbrJQNhyE")
-
+        add_youtube_video(browser,state,"https://www.youtube.com/watch?v=6GAbrJQNhyE")
         time.sleep( 3 )
-
-        xwait_for_then_click(state,browser, xpath_objects.add_video_library_ok)
-        time.sleep( 1 )
 
         xwait_for_then_click(state,browser, xpath_objects.practice_view_total_area)
         time.sleep( 1 )

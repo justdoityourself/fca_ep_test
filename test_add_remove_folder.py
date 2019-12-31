@@ -44,7 +44,7 @@ def add_remove_folder(browser):
             time.sleep( 1 )
 
             i += 1
-        
+        time.sleep( 3 )
 
 
 

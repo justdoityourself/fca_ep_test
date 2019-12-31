@@ -3,6 +3,7 @@ from selenium.common.exceptions import TimeoutException
 import traceback
 import xpath_objects
 import time
+from test_utility import add_youtube_video, return_to_library 
 
 report_edit_timeline_legend = [
     "Success",
@@ -21,23 +22,10 @@ def edit_timeline(browser):
         time.sleep( 1 )
         xwait_for(state,browser, xpath_objects.library_overlay_button_active)
         time.sleep( 1 )
+
+        add_youtube_video(browser,state,"https://www.youtube.com/watch?v=VsTDGy38lcY")
        
-        xwait_for_then_click(state,browser, xpath_objects.add_video_library_overlay)
-        time.sleep( 1 )
-
-        xwait_for_then_click(state,browser, xpath_objects.add_video_youtube_link_click)
-        time.sleep( 1 )
-        xwait_for(state,browser, xpath_objects.add_video_dialog)
-        time.sleep( 1 )
-
-        Add_link = xwait_for(state,browser, xpath_objects.music_videoyoutube_link)
-
-        Add_link.send_keys("https://www.youtube.com/watch?v=VsTDGy38lcY")
-
         time.sleep( 3 )
-
-        xwait_for_then_click(state,browser, xpath_objects.add_video_library_ok)
-        time.sleep( 1 )
 
         xwait_for_then_click(state,browser, xpath_objects.practice_view_total_area)
         time.sleep( 1 )
@@ -78,11 +66,7 @@ def edit_timeline(browser):
         xwait_for_then_click(state,browser, xpath_objects.stop_video_click_enywhare)
         time.sleep( 5 )
 
-        xwait_for_then_click(state,browser, xpath_objects.return_to_selection_view)
-        time.sleep( 3 )
-
-        xwait_for_then_click(state,browser, xpath_objects.are_you_sure_pop_yes)
-        time.sleep( 2 )
+        return_to_library(browser,state)
 
 
         #xwait_for_then_click(state,browser, xpath_objects.return_to_selection_view)
