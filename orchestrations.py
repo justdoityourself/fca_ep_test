@@ -9,10 +9,10 @@ from utility import delay_component60
 
 #test_debug_login_enter
 full_mode1 = {
-    "license_dialog":license_dialog1,
-    #"add folders":add_remove_folder_1,
-    #"add_video_library":add_video,
-    #"markers_to_section":edit_timeline_convert_sections,
+    "license_dialog":license_dialog3,
+    "add folders":add_remove_folder_1,
+    "add_video_library":add_video,
+    "markers_to_section":edit_timeline_convert_sections,
     "edit_timeline":edit_timeline_1,
     "settings_dialog":settings_dialog
    

@@ -18,10 +18,10 @@ def edit_timeline(browser):
     state = [0]
     try:
 
-        xwait_for_then_click(state,browser, xpath_objects.library_overlay_button)
-        time.sleep( 1 )
-        xwait_for(state,browser, xpath_objects.library_overlay_button_active)
-        time.sleep( 1 )
+        #xwait_for_then_click(state,browser, xpath_objects.library_overlay_button)
+        #time.sleep( 1 )
+        #xwait_for(state,browser, xpath_objects.library_overlay_button_active)
+        #time.sleep( 1 )
 
         add_youtube_video(browser,state,"https://www.youtube.com/watch?v=VsTDGy38lcY")
        
